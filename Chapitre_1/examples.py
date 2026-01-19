@@ -24,6 +24,8 @@ res = num1 * num2
 res = num1 / num2       # the division operator will always return a float value for ( int / int ), even when there is no remainder
 res = num1 ** 2         # power operator
 
+print(res)
+
 # python allows for basic text concatenation via the + operator as well
 text1 = "Hello "
 text2 = "World"
@@ -33,7 +35,13 @@ final = text1 + text2
 print(final)
 
 # print("Test for string concatenation with an int value: " + num1) <- this will not work: TypeError: can only concatenate str (not "int") to str
+
 # the print() and input() functions print and take input from the commandline respectively
+
+# the input() function will always return a string -> it is necessary to explicitly convert the desired value from the returned string value.
+# the print() function will attempt to coerce any input argument into a string value. Even arrays and objects can be coerced via str().
+
+print([1, 2, 3])
 
 # presumably, int() will throw an error if it cannot parse an int
 age = int(input("How old are you? "))           # can throw: ValueError: invalid literal for int() with base 10: 'aaa'
