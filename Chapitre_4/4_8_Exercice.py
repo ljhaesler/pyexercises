@@ -1,36 +1,26 @@
 # Orif Section Informatique
 #
-# Exercice 3.8
-# Programme jeu de nombre améliorée
+# Exercice 4.8
+# Programme jeu de nombre avec nombre aléatoire
 #
 # Auteur:   Lawrence Haesler
 # Date:     22.01.2026
 
 import os
-import sys                                                          # importing the argparse package allows for more extensive use of argv[]
+import random
 
 Clear = lambda : os.system("cls")
 Clear()
 
-print("Orif section informatique - Exercice 3.8 - Lawrence Haesler")
-print("Programme jeu de nombre améliorée")
+print("Orif section informatique - Exercice 4.8 - Lawrence Haesler")
+print("Programme jeu de nombre avec nombre aléatoire")
 print("______________________________")
 
-nombre = None
+nombre = random.randint(1, 100)
 nombreChoisi = 0
 tentative = 1
-
-bas = int(sys.argv[1]) if len(sys.argv) > 1 else 1                   # int(sys.argv[1]) will throw an error if a string is input
-haut = int(sys.argv[2]) if len(sys.argv) > 2 else 100                # Program can now be called via: py FILENAME.py LOWINT HIGHINT
-
-while True:
-    nombre = int(input("Veuillez indiquer un nombre entre " + str(bas) + " et " + str(haut) + " : "))
-    if bas <= nombre <= haut:
-        break
-    else:
-        print("Veuillez indiquer un nombre uniquement entre " + str(bas) + " et " + str(haut) + ".")
-
-Clear()
+bas = 1             # random.randint(1, 50) could also be used here, for example
+haut = 100
 
 print("Vous devez trouver un nombre mystérieux entre " + str(bas) + " et " + str(haut) + " !")
 while nombre != nombreChoisi:
