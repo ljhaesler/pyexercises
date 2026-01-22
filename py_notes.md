@@ -3,13 +3,17 @@
 ### Type conversion functions
 
 float()
+
 str()
+
 int()
+
 bool()
 
 ### Standard I/O
 
 input() - always returns String
+
 print() - coerces each argument to String
 
 ### Int & Float
@@ -19,14 +23,19 @@ round()
 ### Sequence types
 
 list() -> Also declared via: var = [..., ..., ...]
+
 tuple() -> Also declared via: var = (..., ..., ...)
+
 range() -> range(start, end, step), start included, end excluded
 
 Types that handle **text & binary** are also considered sequence types
 
 str()
+
 bytes()
+
 bytearray()
+
 memoryview()
 
 #### Sequence types operations
@@ -36,11 +45,13 @@ in, not in, +, \*, [i], [i:j], [i:j:k], len(), min(), max()
 #### For loop syntax
 
 for x in _SEQUENCE_:
-_EXECUTE_
+
+    _EXECUTE_
 
 ### Import from standard library
 
 import _MODULE_
+
 from _MODULE_ import _ATTRIBUTE_ as _ALIAS_
 
 #### std library imports used
