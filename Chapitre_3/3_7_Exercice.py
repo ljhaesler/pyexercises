@@ -31,7 +31,7 @@ Clear()
 print("Devinez un nombre entre 1 et 100\n")
 
 while nombreChoisi != nombre:
-    nombreChoisi = int(input("Tentative " + str(tentative) + " : ", ))
+    nombreChoisi = int(input("Tentative " + str(tentative) + " : "))
 
     if nombreChoisi == nombre:
         continue
@@ -46,4 +46,4 @@ while nombreChoisi != nombre:
     else:
         print("Veuillez indiquer un nombre uniquement entre 1 et 100")
 
-print("Bravo, vous avez trouvé!")
+print("Bravo, vous avez trouvé en", tentative, "tentative(s)!")
