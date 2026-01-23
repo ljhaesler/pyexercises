@@ -9,7 +9,7 @@
 
 import os
 import random
-Clear = lambda : os.system("cls")
+Clear = lambda : os.system("cls") 
 Clear()
 
 print("Orif section informatique - Exercice 4.7 - Lawrence Haesler")
