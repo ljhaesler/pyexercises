@@ -17,9 +17,11 @@ print("______________________________")
 # will have to look into f-strings for this kind of justifying/padding
 # input(f"{'Indiquez combien de kilomètres pour un aller simple':<75}: ")
 
+# 
+
 while True:
-    kmTotal = float(input("Indiquez combien de kilomètres pour un aller simple".ljust(75) + ": ")) * 2
-    joursTotal = int(input("Indiquez combien de jours en total (nombre entier)".ljust(75) + ": "))
+    kmTotal = float(input(f"{f'Indiquez combien de kilomètres pour un aller simple':<75}: ")) * 2
+    joursTotal = int(input(f"{f'Indiquez combien de jours en total (nombre entier)':<75}: "))
 
     if kmTotal < 0 or joursTotal < 0:
         print("Veuillez uniquement utiliser des nombres positifs")
@@ -44,7 +46,7 @@ while True:
     print("Calcul des frais :")
     print("------------------")
 
-    print("Coût du déplacement ({} kilomètres à {}.-)".ljust(75) )
+    print(f"{f'Coût du déplacement ({kmTotal} kilomètres à {tarif}.-)':<75}: {fraisDeplacement}")
     
 
 

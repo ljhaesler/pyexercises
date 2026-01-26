@@ -20,18 +20,6 @@ print() - coerces each argument to String
 
 round()
 
-### String methods
-
-str.ljust(length, paddingChar) -> Pads the text to a given length with the given paddingChar
-
-str.rjust() -> Does the same but adds padding to the left.
-
-str.center() -> Will add padding to center the string
-
-str.format(args) -> Writes the given arguments to designated places in the string. **Ex**:
-
-"The sum of {} + {} is {}".format(1, 2, 3) == "The sum of {0} + {1} is {2}".format(1, 2, 3) == "The sum of {a} + {b} is {answer}".format(answer=1+2, a=1, b=2)
-
 ### Sequence types
 
 list() -> Also declared via: var = [..., ..., ...]
@@ -60,7 +48,7 @@ for x in _SEQUENCE_:
 
     _EXECUTE_
 
-### Import from standard library
+## Import from standard library
 
 import _MODULE_
 
@@ -92,3 +80,31 @@ import **random**
 
 - random.random() -> Random values between 0 and 1
 - random.randint(1, 100) -> Start & End included
+
+## String methods & f-strings
+
+str.ljust(length, paddingChar) -> Pads the text to a given length with the given paddingChar
+
+str.rjust() -> Does the same but adds padding to the left.
+
+str.center() -> Will add padding to center the string
+
+str.format(args) -> Writes the given arguments to designated places in the string. **Ex**:
+
+"The sum of {} + {} is {}".format(1, 2, 3) == "The sum of {0} + {1} is {2}".format(1, 2, 3) == "The sum of {a} + {b} is {answer}".format(answer=1+2, a=1, b=2)
+
+#### f-string basics
+
+f-strings are Formatted String Literals, you can tell the compiler to treat a string as a format string by prepending it with 'f' -> f"Formatted string syntax". This is known as a string prefix.
+
+There are multiple different string prefixes, 'b', 'r', 'f', 't'.
+
+'b' tells the compiler to interpret the string as raw bytes => ASCII chars to 128 and/or hex/octal/decimal escape sequences to 256.
+
+'r' tells the compiler to interpret the string as a raw string: every char that makes up the string will be interpreted literally.
+
+'f' is the formatted string we will discuss, and 't' is a formatted string that is interpreted slightly differently from an 'f' string, but this distinction isn't important at the moment.
+
+Fundamentally, an f-string allows for the insertion of replacement fields that can be filled with expressions/variables that are evaluated at run time. Replacement fields can themselves contain f-strings, allowing for (almost) limitless nesting, and each of these f-strings are evaluated and formatted at run time. In addition, each replacement field can be appended with a **Format Specifier**, which can define how each expression/f-string/variable is presenting, via alignment, fill, float precision, float/int grouping, and more...
+
+**Format Specifiers** operate within their own mini-language. [It's best to refer to the documentation for this] (https://docs.python.org/3/library/string.html#formatspec). One of the more useful specifiers when working in the console is using both align and width. As an example, appending ':<75' to a replacement field will justify it's content to the left, and pad the right-hand side of the content with empty spaces to a width of 75.
