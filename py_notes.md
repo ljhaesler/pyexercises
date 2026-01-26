@@ -4,7 +4,7 @@
 
 float()
 
-str()
+str() -> Technically also a sequence type
 
 int()
 
@@ -20,11 +20,11 @@ print() - coerces each argument to String
 
 round()
 
-### Sequence types
+### (Simple) Sequence types
 
-list() -> Also declared via: var = [..., ..., ...]
+list() -> Also declared via: var = [..., ..., ...]. A list is necessarily mutable.
 
-tuple() -> Also declared via: var = (..., ..., ...)
+tuple() -> Also declared via: var = (..., ..., ...). A tuple is necessarily immutable.
 
 range() -> range(start, end, step), start included, end excluded
 
@@ -42,11 +42,39 @@ memoryview()
 
 in, not in, +, \*, [i], [i:j], [i:j:k], len(), min(), max()
 
-#### For loop syntax
+#### Sequence types (simple & global) functions
 
-for x in _SEQUENCE_:
+len(object) -> returns the length of a given sequence type/collection
 
-    _EXECUTE_
+sum(iterable, startValue) -> sums all the elements inside a sequence type starting from an optional int value of startValue. If they are strings, these strings will be concatenated. No join operator can be specified => str.join(sequence) is usually preferred.
+
+all(iterable) -> Evaluates all the elements inside a sequence type and returns True only if all elements evaluate to true.
+
+any(iterable) -> Evaluates all the elements inside a sequence type and returns True if at least one element evaluates to true
+
+filter(callback(element), iterable) -> Applies a callback to each element of the sequence type, and returns a new iterable containing each element that returned true from the callback.
+
+map(callback(element), iterable) -> Applies a callback to each element, and returns a new iterable containing the values returned by the callback. map() can be supplied with multiple iterables, meaning multiple values can be manipulated inside the callback before being returned as a single value inside the new iterable.
+
+max(iterable) -> Returns the largest value of an iterable. (There are more specifics than this, but not really important.)
+
+min(iterable) -> Returns the smallest value of an iterable. (There are more specifics than this, but not really important.)
+
+set() -> Technically also a sequence type itself
+
+slice()
+
+sorted()
+
+### Arbitrary python code evaluation & execution
+
+exec()
+
+eval()
+
+### Filesystem
+
+open()
 
 ## Import from standard library
 
@@ -108,3 +136,9 @@ There are multiple different string prefixes, 'b', 'r', 'f', 't'.
 Fundamentally, an f-string allows for the insertion of replacement fields that can be filled with expressions/variables that are evaluated at run time. Replacement fields can themselves contain f-strings, allowing for (almost) limitless nesting, and each of these f-strings are evaluated and formatted at run time. In addition, each replacement field can be appended with a **Format Specifier**, which can define how each expression/f-string/variable is presenting, via alignment, fill, float precision, float/int grouping, and more...
 
 **Format Specifiers** operate within their own mini-language. [It's best to refer to the documentation for this] (https://docs.python.org/3/library/string.html#formatspec). One of the more useful specifiers when working in the console is using both align and width. As an example, appending ':<75' to a replacement field will justify it's content to the left, and pad the right-hand side of the content with empty spaces to a width of 75.
+
+As a full example, note how there's no need to use both 'single quotes' and "double quotes", the interpreter handles nested quotes inside replacement fields just fine :
+
+f"{f"This is a {f"very padded":>25} string":<75}: "
+
+Logically, the "very padded" string will enforce a size of 25 chars, and it's outer string will enforce a size of 75 chars. This means that this outer string must have 50 chars to work with, and the outermost string must contain 77 characters, as it is only appending two chars ": " to the end of the first replacement field.

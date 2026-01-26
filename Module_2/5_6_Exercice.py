@@ -19,9 +19,10 @@ print("______________________________")
 
 # 
 
+
 while True:
-    kmTotal = float(input(f"{f'Indiquez combien de kilomètres pour un aller simple':<75}: ")) * 2
-    joursTotal = int(input(f"{f'Indiquez combien de jours en total (nombre entier)':<75}: "))
+    kmTotal = float(input(f"{f"Indiquez combien de kilomètres pour un aller simple":<75}: ")) * 2
+    joursTotal = int(input(f"{f"Indiquez combien de jours en total (nombre entier)":<75}: "))
 
     if kmTotal < 0 or joursTotal < 0:
         print("Veuillez uniquement utiliser des nombres positifs")
@@ -46,7 +47,7 @@ while True:
     print("Calcul des frais :")
     print("------------------")
 
-    print(f"{f'Coût du déplacement ({kmTotal} kilomètres à {tarif}.-)':<75}: {fraisDeplacement}")
+    print(f"{f"Coût du déplacement ({kmTotal} kilomètres à {tarif}.-)":<75}: {fraisDeplacement}")
     
 
 
