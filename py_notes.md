@@ -1,6 +1,6 @@
 ## Builtin Functions (global):
 
-### Type conversion functions
+### Type conversion/declaration functions
 
 float()
 
